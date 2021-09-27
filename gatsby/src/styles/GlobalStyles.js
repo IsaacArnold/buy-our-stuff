@@ -10,7 +10,9 @@ const GlobalStyles = createGlobalStyle`
 }
 
 :root {
-
+ --red: #AA3333;
+ --yellow: #FEFF5C;
+ --green: #7EFFB1;
 }
 
 * {
