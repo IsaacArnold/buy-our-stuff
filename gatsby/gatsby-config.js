@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
@@ -7,9 +11,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-styled-components",
       options: {
-        // ssr: false
         displayName: true,
-        // minify: false
       },
     },
   ],
