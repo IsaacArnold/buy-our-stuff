@@ -808,6 +808,15 @@ var plugins = [{
     "pure": false,
     "disableVendorPrefixes": false
   }
+}, {
+  name: 'gatsby-source-sanity',
+  plugin: __webpack_require__(/*! ./node_modules/gatsby-source-sanity/gatsby-ssr */ "./node_modules/gatsby-source-sanity/gatsby-ssr.js"),
+  options: {
+    "plugins": [],
+    "projectId": "bk6rpdoy",
+    "dataset": "production",
+    "watchMode": true
+  }
 }];
 /* global plugins */
 // During bootstrap, we write requires at top of this file which looks like:
@@ -1204,6 +1213,51 @@ exports.onRenderBody = function (_ref2) {
     sheetByPathname.delete(pathname);
   }
 };
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-source-sanity/gatsby-ssr.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/gatsby-source-sanity/gatsby-ssr.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+// Proxy to TypeScript-compiled output.
+// Note that unlike gatsby-node.js, we need to explicitly define the exported hooks
+// as they seem to be statically analyzed at build time.
+const ssr = __webpack_require__(/*! ./lib/gatsby-ssr */ "./node_modules/gatsby-source-sanity/lib/gatsby-ssr.js");
+
+exports.onRenderBody = ssr.onRenderBody;
+
+/***/ }),
+
+/***/ "./node_modules/gatsby-source-sanity/lib/gatsby-ssr.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/gatsby-source-sanity/lib/gatsby-ssr.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.onRenderBody = void 0;
+
+const react_1 = __webpack_require__(/*! react */ "react");
+
+const onRenderBody = ({
+  setHeadComponents
+}) => {
+  setHeadComponents([react_1.createElement('link', {
+    rel: 'preconnect',
+    key: 'sanity-cdn-preconnect',
+    href: 'https://cdn.sanity.io'
+  })]);
+};
+
+exports.onRenderBody = onRenderBody;
 
 /***/ }),
 
