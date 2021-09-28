@@ -3,18 +3,6 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 
-const HomePageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: #fff;
-  margin: 30px 15px;
-  padding: 0px 15px;
-  border-radius: 10px;
-`;
-
 const HomePageCTA = styled(Link)`
   display: flex;
   background-color: var(--red);
@@ -28,8 +16,7 @@ const HomePageCTA = styled(Link)`
 const HomePage = () => {
   return (
     <Layout>
-      <HomePageContainer>
-        <h1>Buy Our Stuff</h1>
+      <div>
         <p>Hey 👋 we are Isaac & Vanessa</p>
         <p>
           We are moving back to Brisbane after a few years of living in
@@ -42,7 +29,7 @@ const HomePage = () => {
           you!
         </p>
         <HomePageCTA>Browse our stuff</HomePageCTA>
-      </HomePageContainer>
+      </div>
     </Layout>
   );
 };
