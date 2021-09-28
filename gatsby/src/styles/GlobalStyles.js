@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
  --red: #AA3333;
  --yellow: #FEFF5C;
  --green: #7EFFB1;
+ --black: #2E2E2E;
 }
 
 * {

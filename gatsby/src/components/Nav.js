@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import styled from "styled-components";
 
 const NavStyles = styled.nav`
@@ -6,6 +7,21 @@ const NavStyles = styled.nav`
   flex-direction: column;
   h1 {
     font-size: 2rem;
+    margin-top: 2rem;
+  }
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: var(--black);
   }
 `;
 
@@ -14,8 +30,12 @@ const Nav = () => {
     <NavStyles>
       <h1>Buy Our Stuff</h1>
       <ul>
-        <li>Home</li>
-        <li>Stuff</li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/stuff">Stuff</Link>
+        </li>
       </ul>
     </NavStyles>
   );

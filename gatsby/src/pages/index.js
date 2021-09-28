@@ -3,20 +3,25 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 
+const HomePageContent = styled.section`
+  margin: 30px 0;
+`;
+
 const HomePageCTA = styled(Link)`
   display: flex;
+  justify-content: center;
+  width: 75%;
   background-color: var(--red);
   color: #fff;
   padding: 15px 20px;
   border-radius: 10px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin: 50px auto;
 `;
 
 const HomePage = () => {
   return (
     <Layout>
-      <div>
+      <HomePageContent>
         <p>Hey 👋 we are Isaac & Vanessa</p>
         <p>
           We are moving back to Brisbane after a few years of living in
@@ -29,7 +34,7 @@ const HomePage = () => {
           you!
         </p>
         <HomePageCTA>Browse our stuff</HomePageCTA>
-      </div>
+      </HomePageContent>
     </Layout>
   );
 };
