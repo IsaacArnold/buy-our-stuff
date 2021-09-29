@@ -18,7 +18,8 @@ const IndividualProductStyles = styled.div`
   }
 `;
 
-const SingleProduct = () => {
+const SingleProduct = ({ product }) => {
+  const image = getImage(product[0].image.asset.gatsbyImageData);
   return (
     <IndividualProductStyles>
       <div className="title-price">
@@ -31,11 +32,10 @@ const SingleProduct = () => {
 };
 
 const ProductList = ({ products }) => {
-  const image = getImage(products[0].image.asset.gatsbyImageData);
   return (
     <ProductGridStyles>
       {products.map((product) => {
-        <SingleProduct />;
+        <SingleProduct product={product} />;
       })}
     </ProductGridStyles>
   );
