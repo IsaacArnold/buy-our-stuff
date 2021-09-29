@@ -8,6 +8,9 @@ module.exports = {
     title: "Buy Our Stuff",
   },
   plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: "gatsby-plugin-styled-components",
       options: {
