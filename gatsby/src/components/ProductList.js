@@ -16,17 +16,26 @@ const IndividualProductStyles = styled.div`
     justify-content: space-around;
     align-items: center;
   }
+  .product-grid-img {
+    height: 200px;
+  }
 `;
 
 const SingleProduct = ({ product }) => {
-  const image = getImage(product[0].image.asset.gatsbyImageData);
+  const image = getImage(product.image.asset.gatsbyImageData);
   return (
     <IndividualProductStyles>
       <div className="title-price">
-        <h2>Test product</h2>
-        <p>$50</p>
+        <h2>{product.name}</h2>
+        <p>{product.price}</p>
       </div>
-      <GatsbyImage image={image} />
+      <Link to={`/product/${product.slug.current}`}>
+        <GatsbyImage
+          image={image}
+          alt={product.name}
+          className="product-grid-img"
+        />
+      </Link>
     </IndividualProductStyles>
   );
 };
@@ -34,9 +43,9 @@ const SingleProduct = ({ product }) => {
 const ProductList = ({ products }) => {
   return (
     <ProductGridStyles>
-      {products.map((product) => {
-        <SingleProduct product={product} />;
-      })}
+      {products.map((product) => (
+        <SingleProduct product={product} key={product.id} />
+      ))}
     </ProductGridStyles>
   );
 };
