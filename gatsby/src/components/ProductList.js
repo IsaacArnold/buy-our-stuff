@@ -27,7 +27,7 @@ const SingleProduct = ({ product }) => {
     <IndividualProductStyles>
       <div className="title-price">
         <h2>{product.name}</h2>
-        <p>{product.price}</p>
+        <p>{`$${product.price}`}</p>
       </div>
       <Link to={`/product/${product.slug.current}`}>
         <GatsbyImage

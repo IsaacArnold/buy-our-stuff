@@ -15,7 +15,7 @@ const Product = ({ data: { product } }) => {
       <ProductGrid>
         <div>
           <h2>{product.name}</h2>
-          <p>{product.price}</p>
+          <p>{`$${product.price}`}</p>
           <p>{product.product_description}</p>
         </div>
         <GatsbyImage image={image} alt={product.name} />
