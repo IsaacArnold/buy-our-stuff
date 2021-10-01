@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import ProductList from "../components/ProductList";
+import CategoriesFilter from "../components/CategoriesFilter";
 
 const StuffPage = ({ data, pageContext }) => {
   const products = data.products.nodes;
@@ -9,7 +10,7 @@ const StuffPage = ({ data, pageContext }) => {
     <Layout>
       <h2>This is our stuff!</h2>
       <p>To view more details about an item, simply click the image.</p>
-      {/* Filter */}
+      <CategoriesFilter activeCategory={pageContext.topping} />
       <ProductList products={products} />
     </Layout>
   );
