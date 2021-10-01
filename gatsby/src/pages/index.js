@@ -16,6 +16,7 @@ const HomePageCTA = styled(Link)`
   padding: 15px 20px;
   border-radius: 10px;
   margin: 50px auto;
+  text-decoration: none;
 `;
 
 const HomePage = () => {
@@ -33,7 +34,7 @@ const HomePage = () => {
           Check out what we are selling and let us know if anything interests
           you!
         </p>
-        <HomePageCTA>Browse our stuff</HomePageCTA>
+        <HomePageCTA to="/stuff">Browse our stuff</HomePageCTA>
       </HomePageContent>
     </Layout>
   );

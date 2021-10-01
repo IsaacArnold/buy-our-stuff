@@ -8,6 +8,7 @@ const StuffPage = ({ data, pageContext }) => {
   return (
     <Layout>
       <h2>This is our stuff!</h2>
+      <p>To view more details about an item, simply click the image.</p>
       {/* Filter */}
       <ProductList products={products} />
     </Layout>

@@ -1,4 +1,3 @@
-const { create } = require("domain");
 const path = require(`path`);
 
 exports.createPages = async ({ graphql, actions }) => {
