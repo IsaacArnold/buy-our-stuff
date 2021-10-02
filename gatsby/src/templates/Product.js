@@ -30,7 +30,6 @@ const ProductGrid = styled.div`
 
 const Product = ({ data: { product } }) => {
   const image = getImage(product.image.asset.gatsbyImageData);
-  console.log(product);
   return (
     <Layout>
       {/* SEO component */}
