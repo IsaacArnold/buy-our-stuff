@@ -3,13 +3,24 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import ProductList from "../components/ProductList";
 import CategoriesFilter from "../components/CategoriesFilter";
+import styled from "styled-components";
+
+const StuffHeading = styled.h2`
+  margin-bottom: 0;
+`;
+
+const StuffParagraph = styled.p`
+  margin-bottom: 2rem;
+`;
 
 const StuffPage = ({ data, pageContext }) => {
   const products = data.products.nodes;
   return (
     <Layout>
-      <h2>This is our stuff!</h2>
-      <p>To view more details about an item, simply click the image.</p>
+      <StuffHeading>This is our stuff!</StuffHeading>
+      <StuffParagraph>
+        To view more details about an item, simply click the image.
+      </StuffParagraph>
       <CategoriesFilter activeCategory={pageContext.topping} />
       <ProductList products={products} />
     </Layout>
@@ -33,7 +44,12 @@ export const query = graphql`
         }
         image {
           asset {
-            gatsbyImageData(placeholder: BLURRED)
+            gatsbyImageData(
+              placeholder: BLURRED
+              layout: CONSTRAINED
+              width: 300
+              height: 200
+            )
           }
         }
         categories {

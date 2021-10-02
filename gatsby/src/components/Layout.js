@@ -10,8 +10,11 @@ const PageContainer = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 95%;
+  max-width: 1300px;
   background-color: #fff;
-  margin: auto 15px;
+  margin: auto;
+  margin-top: 40px;
   padding: 0px 15px;
   border-radius: 10px;
 `;

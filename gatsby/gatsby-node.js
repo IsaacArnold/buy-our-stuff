@@ -3,6 +3,7 @@ const path = require(`path`);
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const productTemplate = path.resolve("src/templates/Product.js");
+  const categoryTemplate = path.resolve("src/pages/stuff.js");
 
   const { data } = await graphql(`
     query {
@@ -12,6 +13,12 @@ exports.createPages = async ({ graphql, actions }) => {
           slug {
             current
           }
+        }
+      }
+      categories: allSanityCategory {
+        nodes {
+          name
+          id
         }
       }
     }
@@ -26,22 +33,6 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
-};
-
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
-  const categoryTemplate = path.resolve("src/pages/stuff.js");
-
-  const { data } = await graphql(`
-    query {
-      categories: allSanityCategory {
-        nodes {
-          name
-          id
-        }
-      }
-    }
-  `);
 
   data.categories.nodes.forEach((category) => {
     createPage({

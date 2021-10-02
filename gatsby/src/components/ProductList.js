@@ -5,9 +5,17 @@ import styled from "styled-components";
 
 const ProductGridStyles = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
   grid-gap: 4rem;
   grid-auto-rows: auto auto 500px;
+  margin-bottom: 40px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+  @media (min-width: 1170px) {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
 `;
 
 const IndividualProductStyles = styled.div`
@@ -15,9 +23,6 @@ const IndividualProductStyles = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-  }
-  .product-grid-img {
-    height: 200px;
   }
 `;
 

@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const CategoryStyles = styled.div`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2rem;
@@ -58,7 +59,7 @@ function countProductsInCategories(products) {
 }
 
 const CategoriesFilter = ({ activeCategory }) => {
-  const { categories, products } = useStaticQuery(graphql`
+  const { products } = useStaticQuery(graphql`
     query {
       toppings: allSanityCategory {
         nodes {
