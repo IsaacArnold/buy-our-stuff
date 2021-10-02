@@ -27,3 +27,30 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 };
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const categoryTemplate = path.resolve("src/pages/stuff.js");
+
+  const { data } = await graphql(`
+    query {
+      categories: allSanityCategory {
+        nodes {
+          name
+          id
+        }
+      }
+    }
+  `);
+
+  data.categories.nodes.forEach((category) => {
+    createPage({
+      path: `category/${category.name}`,
+      component: categoryTemplate,
+      context: {
+        category: category.name,
+        categoryRegex: `/${category.name}/i`,
+      },
+    });
+  });
+};

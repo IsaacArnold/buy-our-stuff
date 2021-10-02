@@ -19,8 +19,10 @@ const StuffPage = ({ data, pageContext }) => {
 export default StuffPage;
 
 export const query = graphql`
-  query ProductQuery {
-    products: allSanityProduct {
+  query ProductQuery($categoryRegex: String) {
+    products: allSanityProduct(
+      filter: { categories: { elemMatch: { name: { regex: $categoryRegex } } } }
+    ) {
       nodes {
         name
         id
