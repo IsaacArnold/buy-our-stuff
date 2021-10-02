@@ -6,23 +6,30 @@ const CategoryStyles = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   a {
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-gap: 0 1rem;
+    grid-gap: 0 0.5rem;
     align-items: center;
-    padding: 5px;
-    background: var(--grey);
-    border-radius: 2px;
+    padding: 10px;
+    background: var(--red);
+    border-radius: 10px;
     text-decoration: none;
     font-size: clamp(1.5rem, 1.4vw, 2.5rem);
+    color: #fff;
     .count {
       background: white;
-      padding: 2px 5px;
+      padding: 2px 8px;
+      border-radius: 10px;
+      color: var(--black);
+    }
+    span {
+      font-size: 1rem;
     }
     &[aria-current="page"] {
-      background: var(--red);
+      background: var(--green);
+      color: var(--black);
     }
   }
 `;
@@ -74,11 +81,14 @@ const CategoriesFilter = ({ activeCategory }) => {
 
   return (
     <CategoryStyles>
-      <Link to="/stuff">All</Link>
+      <Link to="/stuff">
+        <span>All</span>
+        <span className="count">{products.nodes.length}</span>
+      </Link>
       {categoriesWithCounts.map((category) => (
         <Link to={`/category/${category.name}`} key={category.id}>
           <span>{category.name}</span>
-          <span>{category.count}</span>
+          <span className="count">{category.count}</span>
         </Link>
       ))}
     </CategoryStyles>
