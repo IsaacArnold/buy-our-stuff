@@ -43,8 +43,7 @@ const Product = ({ data: { product } }) => {
         </div>
         <GatsbyImage image={image} alt={product.name} />
         <a
-          href={`mailto:${product.contact_person[0].contact_link}`}
-          subject={`I'm interested in buying your ${product.name}`}
+          href={`mailto:${product.contact_person[0].contact_link}?subject=I'm interested in your ${product.name}`}
           className="contact-btn"
         >
           Contact us
