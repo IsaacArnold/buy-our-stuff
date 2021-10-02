@@ -52,6 +52,17 @@ export default {
         },
       ],
     },
+    {
+      name: "contact_person",
+      title: "Contact Button",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "contact_button" }],
+        },
+      ],
+    },
   ],
   preview: {
     select: {

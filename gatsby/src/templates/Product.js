@@ -4,21 +4,52 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 
-const ProductGrid = styled.div``;
+const ProductGrid = styled.div`
+  .individual-product-information {
+    width: 85%;
+    margin: auto;
+    max-width: 615px;
+  }
+  .gatsby-image-wrapper {
+    max-width: 750px;
+  }
+  .contact-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    max-width: 370px;
+    margin: 30px auto;
+    text-decoration: none;
+    background-color: var(--red);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+`;
 
 const Product = ({ data: { product } }) => {
-  //   console.log(product);
   const image = getImage(product.image.asset.gatsbyImageData);
+  console.log(product);
   return (
     <Layout>
       {/* SEO component */}
       <ProductGrid>
-        <div>
-          <h2>{product.name}</h2>
-          <p>{`$${product.price}`}</p>
+        <div className="individual-product-information">
+          <div className="individual-product-heading">
+            <h2>{product.name}</h2>
+            <p>{`$${product.price}`}</p>
+          </div>
           <p>{product.product_description}</p>
         </div>
         <GatsbyImage image={image} alt={product.name} />
+        <a
+          href={`mailto:${product.contact_person[0].contact_link}`}
+          subject={`I'm interested in buying your ${product.name}`}
+          className="contact-btn"
+        >
+          Contact us
+        </a>
       </ProductGrid>
     </Layout>
   );
@@ -35,12 +66,15 @@ export const query = graphql`
       product_description
       image {
         asset {
-          gatsbyImageData(placeholder: BLURRED)
+          gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
         }
       }
       categories {
         name
         id
+      }
+      contact_person {
+        contact_link
       }
     }
   }
