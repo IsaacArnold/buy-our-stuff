@@ -21,7 +21,7 @@ const StuffPage = ({ data, pageContext }) => {
       <StuffParagraph>
         To view more details about an item, simply click the image.
       </StuffParagraph>
-      <CategoriesFilter activeCategory={pageContext.topping} />
+      <CategoriesFilter activeCategory={pageContext.category} />
       <ProductList products={products} />
     </Layout>
   );
