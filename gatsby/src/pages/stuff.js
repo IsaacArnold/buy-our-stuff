@@ -17,7 +17,7 @@ const StuffPage = ({ data, pageContext }) => {
   const products = data.products.nodes;
   return (
     <Layout>
-      <StuffHeading>This is our stuff!</StuffHeading>
+      <StuffHeading>This is our stuff! Test</StuffHeading>
       <StuffParagraph>
         To view more details about an item, simply click the image.
       </StuffParagraph>
