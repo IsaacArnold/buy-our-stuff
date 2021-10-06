@@ -13,8 +13,7 @@ const PageContainer = styled.div`
   width: 95%;
   max-width: 1300px;
   background-color: #fff;
-  margin: auto;
-  margin-top: 40px;
+  margin: 40px auto;
   padding: 0px 15px;
   border-radius: 10px;
 `;
