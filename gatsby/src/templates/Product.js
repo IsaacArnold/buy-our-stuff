@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 
@@ -25,6 +25,9 @@ const ProductGrid = styled.div`
     color: #fff;
     padding: 20px;
     border-radius: 10px;
+  }
+  .gatsby-image-wrapper {
+    margin-bottom: 20px;
   }
 `;
 
