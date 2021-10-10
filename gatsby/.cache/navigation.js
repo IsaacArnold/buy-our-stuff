@@ -1,42 +1,40 @@
 import React from "react"
 import PropTypes from "prop-types"
-import loader from "./loader"
-import redirects from "./redirects.json"
+import loader, { PageResourceStatus } from "./loader"
+import { maybeGetBrowserRedirect } from "./redirect-utils.js"
 import { apiRunner } from "./api-runner-browser"
 import emitter from "./emitter"
-import { navigate as reachNavigate } from "@reach/router"
-import { globalHistory } from "@reach/router/lib/history"
+import { RouteAnnouncerProps } from "./route-announcer-props"
+import { navigate as reachNavigate } from "@gatsbyjs/reach-router"
+import { globalHistory } from "@gatsbyjs/reach-router/lib/history"
 import { parsePath } from "gatsby-link"
 
-// Convert to a map for faster lookup in maybeRedirect()
-const redirectMap = redirects.reduce((map, redirect) => {
-  map[redirect.fromPath] = redirect
-  return map
-}, {})
-
 function maybeRedirect(pathname) {
-  const redirect = redirectMap[pathname]
+  const redirect = maybeGetBrowserRedirect(pathname)
+  const { hash, search } = window.location
 
   if (redirect != null) {
-    if (process.env.NODE_ENV !== `production`) {
-      const pageResources = loader.loadPageSync(pathname)
-
-      if (pageResources != null) {
-        console.error(
-          `The route "${pathname}" matches both a page and a redirect; this is probably not intentional.`
-        )
-      }
-    }
-
-    window.___replace(redirect.toPath)
+    window.___replace(redirect.toPath + search + hash)
     return true
   } else {
     return false
   }
 }
 
+// Catch unhandled chunk loading errors and force a restart of the app.
+let nextRoute = ``
+
+window.addEventListener(`unhandledrejection`, event => {
+  if (/loading chunk \d* failed./i.test(event.reason)) {
+    if (nextRoute) {
+      window.location.pathname = nextRoute
+    }
+  }
+})
+
 const onPreRouteUpdate = (location, prevLocation) => {
   if (!maybeRedirect(location.pathname)) {
+    nextRoute = location.pathname
     apiRunner(`onPreRouteUpdate`, { location, prevLocation })
   }
 }
@@ -44,24 +42,37 @@ const onPreRouteUpdate = (location, prevLocation) => {
 const onRouteUpdate = (location, prevLocation) => {
   if (!maybeRedirect(location.pathname)) {
     apiRunner(`onRouteUpdate`, { location, prevLocation })
+    if (
+      process.env.GATSBY_EXPERIMENTAL_QUERY_ON_DEMAND &&
+      process.env.GATSBY_QUERY_ON_DEMAND_LOADING_INDICATOR === `true`
+    ) {
+      emitter.emit(`onRouteUpdate`, { location, prevLocation })
+    }
   }
 }
 
 const navigate = (to, options = {}) => {
-  let { pathname } = parsePath(to)
-  const redirect = redirectMap[pathname]
+  // Support forward/backward navigation with numbers
+  // navigate(-2) (jumps back 2 history steps)
+  // navigate(2)  (jumps forward 2 history steps)
+  if (typeof to === `number`) {
+    globalHistory.navigate(to)
+    return
+  }
+
+  const { pathname, search, hash } = parsePath(to)
+  const redirect = maybeGetBrowserRedirect(pathname)
 
   // If we're redirecting, just replace the passed in pathname
   // to the one we want to redirect to.
   if (redirect) {
-    to = redirect.toPath
-    pathname = parsePath(to).pathname
+    to = redirect.toPath + search + hash
   }
 
   // If we had a service worker update, no matter the path, reload window and
   // reset the pathname whitelist
   if (window.___swUpdated) {
-    window.location = pathname
+    window.location = pathname + search + hash
     return
   }
 
@@ -81,7 +92,7 @@ const navigate = (to, options = {}) => {
     // back, the browser will just change the URL and expect JS to handle
     // the change, which won't always work since it might not be a Gatsby
     // page.
-    if (!pageResources || pageResources.status === `error`) {
+    if (!pageResources || pageResources.status === PageResourceStatus.Error) {
       window.history.replaceState({}, ``, location.href)
       window.location = pathname
       clearTimeout(timeoutId)
@@ -91,6 +102,10 @@ const navigate = (to, options = {}) => {
     // If the loaded page has a different compilation hash to the
     // window, then a rebuild has occurred on the server. Reload.
     if (process.env.NODE_ENV === `production` && pageResources) {
+      // window.___webpackCompilationHash gets set in production-app.js after navigationInit() is called
+      // So on a direct visit of a page with a browser redirect this check is truthy and thus the codepath is hit
+      // While the resource actually exists, but only too late
+      // TODO: This should probably be fixed by setting ___webpackCompilationHash before navigationInit() is called
       if (
         pageResources.page.webpackCompilationHash !==
         window.___webpackCompilationHash
@@ -106,8 +121,7 @@ const navigate = (to, options = {}) => {
           })
         }
 
-        console.log(`Site has changed on server. Reloading browser`)
-        window.location = pathname
+        window.location = pathname + search + hash
       }
     }
     reachNavigate(to, options)
@@ -122,7 +136,12 @@ function shouldUpdateScroll(prevRouterProps, { location }) {
     // `pathname` for backwards compatibility
     pathname,
     routerProps: { location },
-    getSavedScrollPosition: args => this._stateStorage.read(args),
+    getSavedScrollPosition: args => [
+      0,
+      // FIXME this is actually a big code smell, we should fix this
+      // eslint-disable-next-line @babel/no-invalid-this
+      this._stateStorage.read(args, args.key),
+    ],
   })
   if (results.length > 0) {
     // Use the latest registered shouldUpdateScroll result, this allows users to override plugin's configuration
@@ -170,41 +189,35 @@ class RouteAnnouncer extends React.Component {
       if (document.title) {
         pageName = document.title
       }
-      const pageHeadings = document
-        .getElementById(`gatsby-focus-wrapper`)
-        .getElementsByTagName(`h1`)
+      const pageHeadings = document.querySelectorAll(`#gatsby-focus-wrapper h1`)
       if (pageHeadings && pageHeadings.length) {
         pageName = pageHeadings[0].textContent
       }
       const newAnnouncement = `Navigated to ${pageName}`
-      const oldAnnouncement = this.announcementRef.current.innerText
-      if (oldAnnouncement !== newAnnouncement) {
-        this.announcementRef.current.innerText = newAnnouncement
+      if (this.announcementRef.current) {
+        const oldAnnouncement = this.announcementRef.current.innerText
+        if (oldAnnouncement !== newAnnouncement) {
+          this.announcementRef.current.innerText = newAnnouncement
+        }
       }
     })
   }
 
   render() {
-    return (
-      <div
-        id="gatsby-announcer"
-        style={{
-          position: `absolute`,
-          top: 0,
-          width: 1,
-          height: 1,
-          padding: 0,
-          overflow: `hidden`,
-          clip: `rect(0, 0, 0, 0)`,
-          whiteSpace: `nowrap`,
-          border: 0,
-        }}
-        aria-live="assertive"
-        aria-atomic="true"
-        ref={this.announcementRef}
-      ></div>
-    )
+    return <div {...RouteAnnouncerProps} ref={this.announcementRef}></div>
   }
+}
+
+const compareLocationProps = (prevLocation, nextLocation) => {
+  if (prevLocation.href !== nextLocation.href) {
+    return true
+  }
+
+  if (prevLocation?.state?.key !== nextLocation?.state?.key) {
+    return true
+  }
+
+  return false
 }
 
 // Fire on(Pre)RouteUpdate APIs
@@ -218,19 +231,18 @@ class RouteUpdates extends React.Component {
     onRouteUpdate(this.props.location, null)
   }
 
-  componentDidUpdate(prevProps, prevState, shouldFireRouteUpdate) {
-    if (shouldFireRouteUpdate) {
-      onRouteUpdate(this.props.location, prevProps.location)
-    }
-  }
-
-  getSnapshotBeforeUpdate(prevProps) {
-    if (this.props.location.pathname !== prevProps.location.pathname) {
+  shouldComponentUpdate(prevProps) {
+    if (compareLocationProps(prevProps.location, this.props.location)) {
       onPreRouteUpdate(this.props.location, prevProps.location)
       return true
     }
-
     return false
+  }
+
+  componentDidUpdate(prevProps) {
+    if (compareLocationProps(prevProps.location, this.props.location)) {
+      onRouteUpdate(this.props.location, prevProps.location)
+    }
   }
 
   render() {
@@ -247,4 +259,4 @@ RouteUpdates.propTypes = {
   location: PropTypes.object.isRequired,
 }
 
-export { init, shouldUpdateScroll, RouteUpdates }
+export { init, shouldUpdateScroll, RouteUpdates, maybeGetBrowserRedirect }
