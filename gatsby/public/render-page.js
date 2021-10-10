@@ -2248,9 +2248,7 @@ var plugins = [{
     "minify": true,
     "namespace": "",
     "transpileTemplateLiterals": true,
-    "topLevelImportPaths": [],
-    "pure": false,
-    "disableVendorPrefixes": false
+    "pure": false
   }
 }, {
   name: 'gatsby-source-sanity',
@@ -2629,30 +2627,6 @@ var React = __webpack_require__(/*! react */ "react");
 
 var commonTags = __webpack_require__(/*! common-tags */ "./node_modules/common-tags/es/index.js");
 
-function _interopNamespace(e) {
-  if (e && e.__esModule) return e;
-  var n = Object.create(null);
-
-  if (e) {
-    Object.keys(e).forEach(function (k) {
-      if (k !== 'default') {
-        var d = Object.getOwnPropertyDescriptor(e, k);
-        Object.defineProperty(n, k, d.get ? d : {
-          enumerable: true,
-          get: function () {
-            return e[k];
-          }
-        });
-      }
-    });
-  }
-
-  n['default'] = e;
-  return n;
-}
-
-var React__namespace = /*#__PURE__*/_interopNamespace(React);
-
 var generateHtml = function generateHtml(str) {
   return {
     __html: commonTags.oneLine(str)
@@ -2661,13 +2635,13 @@ var generateHtml = function generateHtml(str) {
 
 function onRenderBody(_ref) {
   var setHeadComponents = _ref.setHeadComponents;
-  setHeadComponents([React__namespace.createElement("style", {
+  setHeadComponents([React.createElement("style", {
     key: "gatsby-image-style",
-    dangerouslySetInnerHTML: generateHtml(".gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}")
-  }), React__namespace.createElement("noscript", {
+    dangerouslySetInnerHTML: generateHtml(".gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper img{all:inherit;bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block}")
+  }), React.createElement("noscript", {
     key: "gatsby-image-style-noscript",
     dangerouslySetInnerHTML: generateHtml("<style>" + ".gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}" + "</style>")
-  }), React__namespace.createElement("script", {
+  }), React.createElement("script", {
     key: "gatsby-image-style-script",
     type: "module",
     dangerouslySetInnerHTML: generateHtml("const e=\"undefined\"!=typeof HTMLImageElement&&\"loading\"in HTMLImageElement.prototype;e&&document.body.addEventListener(\"load\",(function(e){if(void 0===e.target.dataset.mainImage)return;if(void 0===e.target.dataset.gatsbyImageSsr)return;const t=e.target;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector(\"[data-placeholder-image]\"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition=\"opacity 500ms linear\")}))}),!0);")
@@ -2695,14 +2669,13 @@ var _styledComponents = __webpack_require__(/*! styled-components */ "./node_mod
 
 var sheetByPathname = new Map(); // eslint-disable-next-line react/prop-types,react/display-name
 
-exports.wrapRootElement = function (_ref, pluginOptions) {
+exports.wrapRootElement = function (_ref) {
   var element = _ref.element,
       pathname = _ref.pathname;
   var sheet = new _styledComponents.ServerStyleSheet();
   sheetByPathname.set(pathname, sheet);
   return /*#__PURE__*/_react.default.createElement(_styledComponents.StyleSheetManager, {
-    sheet: sheet.instance,
-    disableVendorPrefixes: pluginOptions === null || pluginOptions === void 0 ? void 0 : pluginOptions.disableVendorPrefixes
+    sheet: sheet.instance
   }, element);
 };
 
@@ -2750,7 +2723,7 @@ exports.onRenderBody = void 0;
 
 const react_1 = __webpack_require__(/*! react */ "react");
 
-const onRenderBody = ({
+exports.onRenderBody = ({
   setHeadComponents
 }) => {
   setHeadComponents([react_1.createElement('link', {
@@ -2759,8 +2732,6 @@ const onRenderBody = ({
     href: 'https://cdn.sanity.io'
   })]);
 };
-
-exports.onRenderBody = onRenderBody;
 
 /***/ }),
 
