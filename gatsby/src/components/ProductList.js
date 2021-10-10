@@ -27,7 +27,7 @@ const IndividualProductStyles = styled.div`
 `;
 
 const SingleProduct = ({ product }) => {
-  const image = getImage(product.image.asset.gatsbyImageData);
+  const image = getImage(product.mainImage.asset.gatsbyImageData);
   return (
     <IndividualProductStyles>
       <div className="title-price">

@@ -22,9 +22,19 @@ export default {
       },
     },
     {
-      name: "image",
-      title: "Image",
+      name: "mainImage",
+      title: "Main image",
+      description: "This is the image that will appear on the products page",
       type: "image",
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: "imageGallery",
+      title: "Image gallery",
+      type: "array",
+      of: [{ type: "image" }],
       options: {
         hotspot: true,
       },
@@ -67,7 +77,7 @@ export default {
   preview: {
     select: {
       title: "name",
-      media: "image",
+      media: "imageGallery.0",
       category0: "categories.0.name",
       category1: "categories.1.name",
       category2: "categories.2.name",

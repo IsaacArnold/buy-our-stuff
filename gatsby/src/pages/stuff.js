@@ -42,7 +42,7 @@ export const query = graphql`
         slug {
           current
         }
-        image {
+        mainImage {
           asset {
             gatsbyImageData(
               placeholder: BLURRED

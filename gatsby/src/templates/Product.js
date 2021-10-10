@@ -29,7 +29,8 @@ const ProductGrid = styled.div`
 `;
 
 const Product = ({ data: { product } }) => {
-  const image = getImage(product.image.asset.gatsbyImageData);
+  // const image = getImage(product.image.asset.gatsbyImageData);
+  const images = product.imageGallery;
   return (
     <Layout>
       {/* SEO component */}
@@ -41,7 +42,14 @@ const Product = ({ data: { product } }) => {
           </div>
           <p>{product.product_description}</p>
         </div>
-        <GatsbyImage image={image} alt={product.name} />
+        {/* <GatsbyImage image={image} alt={product.name} /> */}
+        {images.map((image) => (
+          <GatsbyImage
+            image={image.asset.gatsbyImageData}
+            alt={product.name}
+            key={image.asset.id}
+          />
+        ))}
         <a
           href={`mailto:${product.contact_person[0].contact_link}?subject=I'm interested in your ${product.name}`}
           className="contact-btn"
@@ -62,9 +70,10 @@ export const query = graphql`
       id
       price
       product_description
-      image {
+      imageGallery {
         asset {
           gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+          id
         }
       }
       categories {
