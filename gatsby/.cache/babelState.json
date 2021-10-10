@@ -3,10 +3,6 @@
     "develop": {
       "plugins": [
         {
-          "name": "babel-plugin-lodash",
-          "options": {}
-        },
-        {
           "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/gatsby-plugin-image/dist/babel-plugin-parse-static-images.js",
           "options": {
             "cacheDir": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/.cache/caches/gatsby-plugin-image"
@@ -18,39 +14,11 @@
           "options": {
             "plugins": [],
             "displayName": true,
-            "fileName": true,
-            "minify": true,
-            "namespace": "",
-            "transpileTemplateLiterals": true,
-            "topLevelImportPaths": [],
-            "pure": false,
             "ssr": false
           }
-        },
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
-          "options": {}
-        },
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
-          "options": {}
-        },
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
-          "options": {}
         }
       ],
-      "presets": [
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/preset-typescript/lib/index.js",
-          "options": {
-            "plugins": [],
-            "allExtensions": false,
-            "isTSX": false,
-            "jsxPragma": "React"
-          }
-        }
-      ],
+      "presets": [],
       "options": {
         "cacheDirectory": true,
         "sourceType": "unambiguous"
@@ -59,26 +27,10 @@
     "develop-html": {
       "plugins": [
         {
-          "name": "babel-plugin-lodash",
-          "options": {}
-        },
-        {
           "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/gatsby-plugin-image/dist/babel-plugin-parse-static-images.js",
           "options": {
             "cacheDir": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/.cache/caches/gatsby-plugin-image"
           }
-        },
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
-          "options": {}
-        },
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
-          "options": {}
-        },
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
-          "options": {}
         },
         {
           "name": "babel-plugin-styled-components",
@@ -86,27 +38,11 @@
           "options": {
             "plugins": [],
             "displayName": true,
-            "fileName": true,
-            "minify": true,
-            "namespace": "",
-            "transpileTemplateLiterals": true,
-            "topLevelImportPaths": [],
-            "pure": false,
             "ssr": false
           }
         }
       ],
-      "presets": [
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/preset-typescript/lib/index.js",
-          "options": {
-            "plugins": [],
-            "allExtensions": false,
-            "isTSX": false,
-            "jsxPragma": "React"
-          }
-        }
-      ],
+      "presets": [],
       "options": {
         "cacheDirectory": true,
         "sourceType": "unambiguous"
@@ -115,26 +51,10 @@
     "build-html": {
       "plugins": [
         {
-          "name": "babel-plugin-lodash",
-          "options": {}
-        },
-        {
           "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/gatsby-plugin-image/dist/babel-plugin-parse-static-images.js",
           "options": {
             "cacheDir": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/.cache/caches/gatsby-plugin-image"
           }
-        },
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
-          "options": {}
-        },
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
-          "options": {}
-        },
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
-          "options": {}
         },
         {
           "name": "babel-plugin-styled-components",
@@ -142,27 +62,11 @@
           "options": {
             "plugins": [],
             "displayName": true,
-            "fileName": true,
-            "minify": true,
-            "namespace": "",
-            "transpileTemplateLiterals": true,
-            "topLevelImportPaths": [],
-            "pure": false,
             "ssr": true
           }
         }
       ],
-      "presets": [
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/preset-typescript/lib/index.js",
-          "options": {
-            "plugins": [],
-            "allExtensions": false,
-            "isTSX": false,
-            "jsxPragma": "React"
-          }
-        }
-      ],
+      "presets": [],
       "options": {
         "cacheDirectory": true,
         "sourceType": "unambiguous"
@@ -171,26 +75,10 @@
     "build-javascript": {
       "plugins": [
         {
-          "name": "babel-plugin-lodash",
-          "options": {}
-        },
-        {
           "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/gatsby-plugin-image/dist/babel-plugin-parse-static-images.js",
           "options": {
             "cacheDir": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/.cache/caches/gatsby-plugin-image"
           }
-        },
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
-          "options": {}
-        },
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/plugin-proposal-nullish-coalescing-operator/lib/index.js",
-          "options": {}
-        },
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/plugin-proposal-numeric-separator/lib/index.js",
-          "options": {}
         },
         {
           "name": "babel-plugin-styled-components",
@@ -198,27 +86,11 @@
           "options": {
             "plugins": [],
             "displayName": true,
-            "fileName": true,
-            "minify": true,
-            "namespace": "",
-            "transpileTemplateLiterals": true,
-            "topLevelImportPaths": [],
-            "pure": false,
             "ssr": true
           }
         }
       ],
-      "presets": [
-        {
-          "name": "/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/@babel/preset-typescript/lib/index.js",
-          "options": {
-            "plugins": [],
-            "allExtensions": false,
-            "isTSX": false,
-            "jsxPragma": "React"
-          }
-        }
-      ],
+      "presets": [],
       "options": {
         "cacheDirectory": true,
         "sourceType": "unambiguous"

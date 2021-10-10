@@ -1,9 +1,9 @@
 import { apiRunner, apiRunnerAsync } from "./api-runner-browser"
 import React from "react"
 import ReactDOM from "react-dom"
-import { Router, navigate, Location, BaseContext } from "@gatsbyjs/reach-router"
+import { Router, navigate, Location, BaseContext } from "@reach/router"
 import { ScrollContext } from "gatsby-react-router-scroll"
-import { StaticQueryContext } from "gatsby"
+import domReady from "@mikaelkristiansson/domready"
 import {
   shouldUpdateScroll,
   init as navigationInit,
@@ -11,21 +11,15 @@ import {
 } from "./navigation"
 import emitter from "./emitter"
 import PageRenderer from "./page-renderer"
-import asyncRequires from "$virtual/async-requires"
-import {
-  setLoader,
-  ProdLoader,
-  publicLoader,
-  PageResourceStatus,
-  getStaticQueryResults,
-} from "./loader"
+import asyncRequires from "./async-requires"
+import { setLoader, ProdLoader, publicLoader } from "./loader"
 import EnsureResources from "./ensure-resources"
 import stripPrefix from "./strip-prefix"
 
 // Generated during bootstrap
-import matchPaths from "$virtual/match-paths.json"
+import matchPaths from "./match-paths.json"
 
-const loader = new ProdLoader(asyncRequires, matchPaths, window.pageData)
+const loader = new ProdLoader(asyncRequires, matchPaths)
 setLoader(loader)
 loader.setApiRunner(apiRunner)
 
@@ -38,7 +32,7 @@ navigationInit()
 apiRunnerAsync(`onClientEntry`).then(() => {
   // Let plugins register a service worker. The plugin just needs
   // to return true.
-  if (apiRunner(`registerServiceWorker`).filter(Boolean).length > 0) {
+  if (apiRunner(`registerServiceWorker`).length > 0) {
     require(`./register-service-worker`)
   }
 
@@ -61,36 +55,11 @@ apiRunnerAsync(`onClientEntry`).then(() => {
     </BaseContext.Provider>
   )
 
-  const DataContext = React.createContext({})
-
-  class GatsbyRoot extends React.Component {
-    render() {
-      const { children } = this.props
-      return (
-        <Location>
-          {({ location }) => (
-            <EnsureResources location={location}>
-              {({ pageResources, location }) => {
-                const staticQueryResults = getStaticQueryResults()
-                return (
-                  <StaticQueryContext.Provider value={staticQueryResults}>
-                    <DataContext.Provider value={{ pageResources, location }}>
-                      {children}
-                    </DataContext.Provider>
-                  </StaticQueryContext.Provider>
-                )
-              }}
-            </EnsureResources>
-          )}
-        </Location>
-      )
-    }
-  }
-
   class LocationHandler extends React.Component {
     render() {
+      const { location } = this.props
       return (
-        <DataContext.Consumer>
+        <EnsureResources location={location}>
           {({ pageResources, location }) => (
             <RouteUpdates location={location}>
               <ScrollContext
@@ -120,7 +89,7 @@ apiRunnerAsync(`onClientEntry`).then(() => {
               </ScrollContext>
             </RouteUpdates>
           )}
-        </DataContext.Consumer>
+        </EnsureResources>
       )
     }
   }
@@ -150,86 +119,47 @@ apiRunnerAsync(`onClientEntry`).then(() => {
   }
 
   publicLoader.loadPage(browserLoc.pathname).then(page => {
-    if (!page || page.status === PageResourceStatus.Error) {
-      const message = `page resources for ${browserLoc.pathname} not found. Not rendering React`
-
-      // if the chunk throws an error we want to capture the real error
-      // This should help with https://github.com/gatsbyjs/gatsby/issues/19618
-      if (page && page.error) {
-        console.error(message)
-        throw page.error
-      }
-
-      throw new Error(message)
+    if (!page || page.status === `error`) {
+      throw new Error(
+        `page resources for ${browserLoc.pathname} not found. Not rendering React`
+      )
     }
 
     window.___webpackCompilationHash = page.page.webpackCompilationHash
 
-    const SiteRoot = apiRunner(
+    const Root = () => (
+      <Location>
+        {locationContext => <LocationHandler {...locationContext} />}
+      </Location>
+    )
+
+    const WrappedRoot = apiRunner(
       `wrapRootElement`,
-      { element: <LocationHandler /> },
-      <LocationHandler />,
+      { element: <Root /> },
+      <Root />,
       ({ result }) => {
         return { element: result }
       }
     ).pop()
 
-    const App = function App() {
-      const onClientEntryRanRef = React.useRef(false)
-
-      React.useEffect(() => {
-        if (!onClientEntryRanRef.current) {
-          onClientEntryRanRef.current = true
-          if (performance.mark) {
-            performance.mark(`onInitialClientRender`)
-          }
-
-          apiRunner(`onInitialClientRender`)
-        }
-      }, [])
-
-      return <GatsbyRoot>{SiteRoot}</GatsbyRoot>
-    }
+    const NewRoot = () => WrappedRoot
 
     const renderer = apiRunner(
       `replaceHydrateFunction`,
       undefined,
-      ReactDOM.hydrateRoot ? ReactDOM.hydrateRoot : ReactDOM.hydrate
+      ReactDOM.hydrate
     )[0]
 
-    function runRender() {
-      const rootElement =
+    domReady(() => {
+      renderer(
+        <NewRoot />,
         typeof window !== `undefined`
           ? document.getElementById(`___gatsby`)
-          : null
-
-      if (renderer === ReactDOM.hydrateRoot) {
-        renderer(rootElement, <App />)
-      } else {
-        renderer(<App />, rootElement)
-      }
-    }
-
-    // https://github.com/madrobby/zepto/blob/b5ed8d607f67724788ec9ff492be297f64d47dfc/src/zepto.js#L439-L450
-    // TODO remove IE 10 support
-    const doc = document
-    if (
-      doc.readyState === `complete` ||
-      (doc.readyState !== `loading` && !doc.documentElement.doScroll)
-    ) {
-      setTimeout(function () {
-        runRender()
-      }, 0)
-    } else {
-      const handler = function () {
-        doc.removeEventListener(`DOMContentLoaded`, handler, false)
-        window.removeEventListener(`load`, handler, false)
-
-        runRender()
-      }
-
-      doc.addEventListener(`DOMContentLoaded`, handler, false)
-      window.addEventListener(`load`, handler, false)
-    }
+          : void 0,
+        () => {
+          apiRunner(`onInitialClientRender`)
+        }
+      )
+    })
   })
 })
