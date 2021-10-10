@@ -5,7 +5,7 @@ var plugins = [{
     },{
       name: 'gatsby-plugin-styled-components',
       plugin: require('/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
-      options: {"plugins":[],"displayName":true,"fileName":true,"minify":true,"namespace":"","transpileTemplateLiterals":true,"pure":false},
+      options: {"plugins":[],"displayName":true,"fileName":true,"minify":true,"namespace":"","transpileTemplateLiterals":true,"topLevelImportPaths":[],"pure":false,"disableVendorPrefixes":false},
     },{
       name: 'gatsby-source-sanity',
       plugin: require('/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/gatsby-source-sanity/gatsby-ssr'),

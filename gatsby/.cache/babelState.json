@@ -22,6 +22,7 @@
             "minify": true,
             "namespace": "",
             "transpileTemplateLiterals": true,
+            "topLevelImportPaths": [],
             "pure": false,
             "ssr": false
           }
@@ -89,6 +90,7 @@
             "minify": true,
             "namespace": "",
             "transpileTemplateLiterals": true,
+            "topLevelImportPaths": [],
             "pure": false,
             "ssr": false
           }
@@ -144,6 +146,7 @@
             "minify": true,
             "namespace": "",
             "transpileTemplateLiterals": true,
+            "topLevelImportPaths": [],
             "pure": false,
             "ssr": true
           }
@@ -199,6 +202,7 @@
             "minify": true,
             "namespace": "",
             "transpileTemplateLiterals": true,
+            "topLevelImportPaths": [],
             "pure": false,
             "ssr": true
           }
