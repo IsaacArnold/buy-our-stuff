@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 const ProductGrid = styled.div`
   .individual-product-information {
@@ -36,7 +37,7 @@ const Product = ({ data: { product } }) => {
   const images = product.imageGallery;
   return (
     <Layout>
-      {/* SEO component */}
+      <SEO title={product.name} image={images[0].asset?.gatsbyImageData} />
       <ProductGrid>
         <div className="individual-product-information">
           <div className="individual-product-heading">

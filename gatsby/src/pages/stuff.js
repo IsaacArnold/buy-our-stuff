@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import ProductList from "../components/ProductList";
 import CategoriesFilter from "../components/CategoriesFilter";
 import styled from "styled-components";
+import SEO from "../components/SEO";
 
 const StuffHeading = styled.h2`
   margin-bottom: 0;
@@ -17,6 +18,13 @@ const StuffPage = ({ data, pageContext }) => {
   const products = data.products.nodes;
   return (
     <Layout>
+      <SEO
+        title={
+          pageContext.category
+            ? `Goods for your ${pageContext.category}`
+            : "All Goods"
+        }
+      />
       <StuffHeading>This is our stuff!</StuffHeading>
       <StuffParagraph>
         To view more details about an item, simply click the image.

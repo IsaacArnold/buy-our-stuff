@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 const HomePageContent = styled.section`
   margin: 30px 0;
@@ -28,6 +29,7 @@ const HomePageCTA = styled(Link)`
 const HomePage = () => {
   return (
     <Layout>
+      <SEO title="Home" />
       <HomePageContent>
         <div className="content">
           <p>Hey 👋 we are Isaac & Vanessa</p>

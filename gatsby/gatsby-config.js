@@ -5,7 +5,9 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "Buy Our Stuff",
+    title: "Good Goods",
+    description:
+      "Check out our awesome goods for sale. New, pre-loved - all in great condition!",
   },
   plugins: [
     "gatsby-plugin-image",
