@@ -31,7 +31,13 @@ const HomePage = () => {
     <Layout>
       <SEO title="Home" />
       <HomePageContent>
-        <div className="content">
+        <div
+          className="content"
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-delay="250"
+          data-sal-easing="ease"
+        >
           <p>Hey 👋 we are Isaac & Vanessa</p>
           <p>
             We are moving back to Brisbane after a few years of living in
@@ -44,7 +50,15 @@ const HomePage = () => {
             you!
           </p>
         </div>
-        <HomePageCTA to="/stuff">Browse our goods</HomePageCTA>
+        <HomePageCTA
+          to="/stuff"
+          data-sal="slide-up"
+          data-sal-duration="1000"
+          data-sal-delay="1000"
+          data-sal-easing="ease"
+        >
+          Browse our goods
+        </HomePageCTA>
       </HomePageContent>
     </Layout>
   );
