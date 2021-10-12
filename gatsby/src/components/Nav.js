@@ -22,6 +22,14 @@ const NavStyles = styled.nav`
   a {
     text-decoration: none;
     color: var(--black);
+    transition: 0.3s;
+    &:hover {
+      color: var(--red);
+    }
+    &[aria-current="page"] {
+      font-weight: 700;
+      color: var(--red);
+    }
   }
 `;
 
