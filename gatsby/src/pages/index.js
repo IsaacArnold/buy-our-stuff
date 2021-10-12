@@ -36,7 +36,7 @@ const HomePage = () => {
           <p>
             We are moving back to Brisbane after a few years of living in
             Tauranga. To prepare for the move, we are wanting to sell some of
-            our stuff. Some of it is new, some of it pre-loved...all of it in
+            our goods. Some of it is new, some of it pre-loved...all of it in
             good condition!
           </p>
           <p>
@@ -44,7 +44,7 @@ const HomePage = () => {
             you!
           </p>
         </div>
-        <HomePageCTA to="/stuff">Browse our stuff</HomePageCTA>
+        <HomePageCTA to="/stuff">Browse our goods</HomePageCTA>
       </HomePageContent>
     </Layout>
   );

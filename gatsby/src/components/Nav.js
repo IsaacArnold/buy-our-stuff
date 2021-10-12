@@ -28,7 +28,7 @@ const NavStyles = styled.nav`
 const Nav = () => {
   return (
     <NavStyles>
-      <h1>Buy Our Stuff</h1>
+      <h1>Good Goods</h1>
       <ul>
         <li>
           <Link to="/">Home</Link>
