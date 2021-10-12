@@ -31,7 +31,7 @@ const StuffPage = ({ data, pageContext }) => {
         data-sal-delay="250"
         data-sal-easing="ease"
       >
-        This is our stuff!
+        These are our good goods <span>🛍️</span>
       </StuffHeading>
       <StuffParagraph
         data-sal="slide-up"

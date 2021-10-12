@@ -34,7 +34,7 @@ const Nav = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/stuff">Stuff</Link>
+          <Link to="/stuff">Goods</Link>
         </li>
       </ul>
     </NavStyles>

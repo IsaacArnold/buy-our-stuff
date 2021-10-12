@@ -38,7 +38,9 @@ const HomePage = () => {
           data-sal-delay="250"
           data-sal-easing="ease"
         >
-          <p>Hey 👋 we are Isaac & Vanessa</p>
+          <p>
+            Hey <span>👋</span> we are Isaac & Vanessa
+          </p>
           <p>
             We are moving back to Brisbane after a few years of living in
             Tauranga. To prepare for the move, we are wanting to sell some of
