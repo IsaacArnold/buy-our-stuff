@@ -5,9 +5,14 @@ import styled from "styled-components";
 const NavStyles = styled.nav`
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid var(--red);
   h1 {
     font-size: 2rem;
     margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    @media (min-width: 1024px) {
+      font-size: 3rem;
+    }
   }
   ul {
     display: flex;
@@ -23,6 +28,9 @@ const NavStyles = styled.nav`
     text-decoration: none;
     color: var(--black);
     transition: 0.3s;
+    @media (min-width: 1024px) {
+      font-size: 1.2rem;
+    }
     &:hover {
       color: var(--red);
     }
