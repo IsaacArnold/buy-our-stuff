@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import GlobalStyles from "../styles/GlobalStyles";
 import Typography from "../styles/Typography";
+import Footer from "./Footer";
 import Nav from "./Nav";
 
 const PageContainer = styled.div`
@@ -27,6 +28,7 @@ const Layout = ({ children }) => {
         <Nav />
         {children}
       </PageContainer>
+      <Footer />
     </>
   );
 };

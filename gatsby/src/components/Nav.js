@@ -5,7 +5,7 @@ import styled from "styled-components";
 const NavStyles = styled.nav`
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid var(--red);
+  border-bottom: 3px solid var(--red);
   h1 {
     font-size: 2rem;
     margin-top: 2rem;
