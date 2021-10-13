@@ -41,7 +41,6 @@ module.exports = {
         projectId: "bk6rpdoy",
         dataset: "production",
         token: process.env.SANITY_TOKEN,
-        watchMode: true,
       },
     },
   ],
