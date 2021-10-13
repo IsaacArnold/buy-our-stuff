@@ -25,20 +25,10 @@ const StuffPage = ({ data, pageContext }) => {
             : "All Goods"
         }
       />
-      <StuffHeading
-        data-sal="slide-up"
-        data-sal-duration="1000"
-        data-sal-delay="250"
-        data-sal-easing="ease"
-      >
+      <StuffHeading>
         These are our good goods <span>🛍️</span>
       </StuffHeading>
-      <StuffParagraph
-        data-sal="slide-up"
-        data-sal-duration="1000"
-        data-sal-delay="450"
-        data-sal-easing="ease"
-      >
+      <StuffParagraph>
         To view more details about an item, simply click the image.
       </StuffParagraph>
       <CategoriesFilter activeCategory={pageContext.category} />
