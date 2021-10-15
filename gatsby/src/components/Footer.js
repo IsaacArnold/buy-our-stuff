@@ -7,6 +7,7 @@ const FooterStyles = styled.footer`
   align-items: center;
   width: 95%;
   margin: auto;
+  margin-bottom: 40px;
   background: #fff;
   color: var(--black);
   border-radius: 10px;

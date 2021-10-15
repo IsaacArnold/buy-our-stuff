@@ -13,7 +13,7 @@ var plugins = [{
     },{
       name: 'gatsby-source-sanity',
       plugin: require('/Users/IsaacArnold/Documents/web-projects/buy-our-stuff/gatsby/node_modules/gatsby-source-sanity/gatsby-ssr'),
-      options: {"plugins":[],"projectId":"bk6rpdoy","dataset":"production","watchMode":true},
+      options: {"plugins":[],"projectId":"bk6rpdoy","dataset":"production"},
     }]
 /* global plugins */
 // During bootstrap, we write requires at top of this file which looks like:
