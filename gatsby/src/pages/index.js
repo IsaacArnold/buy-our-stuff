@@ -6,6 +6,15 @@ import SEO from "../components/SEO";
 
 const HomePageContent = styled.section`
   margin: 30px 0;
+  @media (min-width: 768px) {
+    width: 80%;
+  }
+  @media (min-width: 1024px) {
+    width: 68%;
+  }
+  @media (min-width: 1440px) {
+    max-width: 635px;
+  }
   .content {
     width: 85%;
     max-width: 640px;
@@ -46,7 +55,7 @@ const HomePage = () => {
             you!
           </p>
         </div>
-        <HomePageCTA>Browse our goods</HomePageCTA>
+        <HomePageCTA to="/stuff">Browse our goods</HomePageCTA>
       </HomePageContent>
     </Layout>
   );
