@@ -4,12 +4,28 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+import { navigate } from "@reach/router";
 
 const ProductGrid = styled.div`
   .individual-product-information {
     width: 85%;
     margin: auto;
     max-width: 615px;
+    .button {
+      display: flex;
+      width: 55%;
+      max-width: 167px;
+      margin: 20px auto;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background: var(--red);
+      border-radius: 10px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
   }
   .gatsby-image-wrapper {
     max-width: 750px;
@@ -40,6 +56,9 @@ const Product = ({ data: { product } }) => {
       <SEO title={product.name} image={images[0].asset?.gatsbyImageData} />
       <ProductGrid>
         <div className="individual-product-information">
+          <p className="button" onClick={() => navigate(-1)} role="button">
+            Back to products
+          </p>
           <div className="individual-product-heading">
             <h2>{product.name}</h2>
             <p>{`$${product.price}`}</p>

@@ -28,7 +28,7 @@ const Footer = () => {
     <FooterStyles>
       <p>
         Website built by{" "}
-        <a href="https://isaacarnold.dev/" target="_blank">
+        <a href="https://isaacarnold.dev/" target="_blank" rel="noreferrer">
           Isaac Arnold
         </a>{" "}
         | 2021
