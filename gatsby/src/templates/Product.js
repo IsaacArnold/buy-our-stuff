@@ -25,6 +25,7 @@ const ProductGrid = styled.div`
       color: #fff;
       font-size: 0.9rem;
       cursor: pointer;
+      border: none;
     }
   }
   .gatsby-image-wrapper {
@@ -56,9 +57,9 @@ const Product = ({ data: { product } }) => {
       <SEO title={product.name} image={images[0].asset?.gatsbyImageData} />
       <ProductGrid>
         <div className="individual-product-information">
-          <p className="button" onClick={() => navigate(-1)} role="button">
+          <button className="button" onClick={() => navigate(-1)}>
             Back to products
-          </p>
+          </button>
           <div className="individual-product-heading">
             <h2>{product.name}</h2>
             <p>{`$${product.price}`}</p>
