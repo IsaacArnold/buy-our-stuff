@@ -21,8 +21,12 @@ const ProductGridStyles = styled.div`
 const IndividualProductStyles = styled.div`
   .title-price {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    h2 {
+      margin-bottom: 0;
+    }
   }
 `;
 
