@@ -58,7 +58,6 @@ export const query = graphql`
               placeholder: BLURRED
               layout: CONSTRAINED
               width: 300
-              height: 200
             )
           }
         }

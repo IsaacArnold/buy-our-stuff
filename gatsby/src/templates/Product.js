@@ -62,7 +62,7 @@ const Product = ({ data: { product } }) => {
           </button>
           <div className="individual-product-heading">
             <h2>{product.name}</h2>
-            <p>{`$${product.price}`}</p>
+            <p>{`$${product.price} (ono)`}</p>
           </div>
           <p>{product.product_description}</p>
         </div>
