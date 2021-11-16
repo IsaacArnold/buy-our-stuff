@@ -5,6 +5,7 @@ import ProductList from "../components/ProductList";
 import CategoriesFilter from "../components/CategoriesFilter";
 import styled from "styled-components";
 import SEO from "../components/SEO";
+import seoImage from "../assets/images/SEO-img-GG.png";
 
 const StuffHeading = styled.h2`
   margin-bottom: 0;
@@ -24,6 +25,7 @@ const StuffPage = ({ data, pageContext }) => {
             ? `Goods for your ${pageContext.category}`
             : "All Goods"
         }
+        image={seoImage}
       />
       <StuffHeading>
         These are our good goods <span>🛍️</span>

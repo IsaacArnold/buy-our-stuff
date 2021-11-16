@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+import seoImage from "../assets/images/SEO-img-GG.png";
 
 const HomePageContent = styled.section`
   margin: 30px 0;
@@ -38,7 +39,7 @@ const HomePageCTA = styled(Link)`
 const HomePage = () => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Home" image={seoImage} />
       <HomePageContent>
         <div>
           <p>
