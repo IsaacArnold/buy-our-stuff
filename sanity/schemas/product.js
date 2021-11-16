@@ -26,12 +26,18 @@ export default {
       title: "Main image",
       description: "This is the image that will appear on the products page",
       type: "image",
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: "imageGallery",
       title: "Image gallery",
       type: "array",
       of: [{ type: "image" }],
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: "product_description",
