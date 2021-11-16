@@ -54,11 +54,7 @@ export const query = graphql`
         }
         mainImage {
           asset {
-            gatsbyImageData(
-              placeholder: BLURRED
-              layout: CONSTRAINED
-              width: 300
-            )
+            gatsbyImageData(placeholder: BLURRED, fit: SCALE)
           }
         }
         categories {
@@ -69,3 +65,5 @@ export const query = graphql`
     }
   }
 `;
+
+// layout: CONSTRAINED;

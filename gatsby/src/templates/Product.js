@@ -28,9 +28,10 @@ const ProductGrid = styled.div`
       border: none;
     }
   }
-  .gatsby-image-wrapper {
+  /* .gatsby-image-wrapper {
     max-width: 750px;
-  }
+    max-height: 500px;
+  } */
   .contact-btn {
     display: flex;
     justify-content: center;
@@ -44,8 +45,20 @@ const ProductGrid = styled.div`
     padding: 20px;
     border-radius: 10px;
   }
-  .gatsby-image-wrapper {
-    margin-bottom: 20px;
+  .image-wrapper {
+    @media (min-width: 768px) {
+      width: 40%;
+      margin: 0 auto;
+    }
+
+    /* @media (min-width: 768px) {
+      max-height: 50%;
+      max-width: 50%;
+      margin: 0 auto;
+    } */
+    .gatsby-image-wrapper {
+      margin-bottom: 20px;
+    }
   }
 `;
 
@@ -67,13 +80,15 @@ const Product = ({ data: { product } }) => {
           <p>{product.product_description}</p>
         </div>
         {/* <GatsbyImage image={image} alt={product.name} /> */}
-        {images.map((image) => (
-          <GatsbyImage
-            image={image.asset.gatsbyImageData}
-            alt={product.name}
-            key={image.asset.id}
-          />
-        ))}
+        <div className="image-wrapper">
+          {images.map((image) => (
+            <GatsbyImage
+              image={image.asset.gatsbyImageData}
+              alt={product.name}
+              key={image.asset.id}
+            />
+          ))}
+        </div>
         <a
           href={`mailto:${product.contact_person[0].contact_link}?subject=I'm interested in your ${product.name}`}
           className="contact-btn"
@@ -96,7 +111,7 @@ export const query = graphql`
       product_description
       imageGallery {
         asset {
-          gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
+          gatsbyImageData(placeholder: BLURRED)
           id
         }
       }
@@ -110,3 +125,5 @@ export const query = graphql`
     }
   }
 `;
+
+// layout: CONSTRAINED; aspectRatio: 1

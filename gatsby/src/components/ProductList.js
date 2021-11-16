@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 const ProductGridStyles = styled.div`
   display: grid;
-  grid-template-columns: repeat(1, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 3rem;
   /* grid-auto-rows: auto auto 500px; */
   margin-bottom: 40px;
@@ -27,6 +27,9 @@ const IndividualProductStyles = styled.div`
     h2 {
       margin-bottom: 0;
     }
+  }
+  .product-grid-img {
+    width: 80%;
   }
 `;
 
