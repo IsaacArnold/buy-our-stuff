@@ -9,6 +9,7 @@ const SEO = ({ children, location, description, title, image }) => {
         siteMetadata {
           title
           description
+          image
         }
       }
     }

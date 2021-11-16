@@ -8,6 +8,7 @@ module.exports = {
     title: "Good Goods",
     description:
       "Check out our awesome goods for sale. New, pre-loved - all in great condition!",
+    image: "./src/assets/images/SEO-img-GG.png",
   },
   plugins: [
     "gatsby-plugin-image",
