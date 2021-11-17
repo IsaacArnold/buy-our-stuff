@@ -35,13 +35,13 @@ const StuffPage = ({ data, pageContext }) => {
         To view more details about an item, simply click the image.
       </StuffParagraph>
       <CategoriesFilter activeCategory={pageContext.category} />
-      <Pagination
+      {/* <Pagination
         pageSize={9}
         totalCount={data.products.totalCount}
         currentPage={pageContext.currentPage || 1}
         skip={pageContext.skip}
         base="/stuff"
-      />
+      /> */}
       <ProductList products={products} />
     </Layout>
   );

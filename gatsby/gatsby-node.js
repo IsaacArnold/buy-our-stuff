@@ -37,12 +37,10 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const pageSize = 9;
   const pageCount = Math.ceil(data.products.totalCount / pageSize);
-  // 4. Loop from 1 to n and create pages for each of them
   Array.from({ length: pageCount }).forEach((_, i) => {
     actions.createPage({
       path: `/stuff/${i + 1}`,
       component: path.resolve("./src/pages/stuff.js"),
-      // This data is passed to the template when we create it
       context: {
         skip: i * pageSize,
         currentPage: i + 1,
