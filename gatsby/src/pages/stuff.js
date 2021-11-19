@@ -50,11 +50,7 @@ const StuffPage = ({ data, pageContext }) => {
 export default StuffPage;
 
 export const query = graphql`
-  query ProductQuery(
-    $skip: Int = 0
-    $pageSize: Int = 9
-    $categoryRegex: String
-  ) {
+  query ProductQuery($categoryRegex: String) {
     products: allSanityProduct(
       filter: { categories: { elemMatch: { name: { regex: $categoryRegex } } } }
     ) {
@@ -82,5 +78,7 @@ export const query = graphql`
 `;
 
 // layout: CONSTRAINED;
-// limit: $pageSize
-// skip: $skip
+// limit: $pageSize;
+// skip: $skip;
+// $skip: Int = 0;
+// $pageSize: Int = 9;

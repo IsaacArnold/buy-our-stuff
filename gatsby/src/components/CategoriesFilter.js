@@ -87,7 +87,7 @@ const CategoriesFilter = ({ activeCategory }) => {
         <span className="count">{products.nodes.length}</span>
       </Link>
       {categoriesWithCounts.map((category) => (
-        <Link to={`/category/${category.name}`} key={category.id}>
+        <Link to={`/stuff/${category.name}`} key={category.id}>
           <span>{category.name}</span>
           <span className="count">{category.count}</span>
         </Link>

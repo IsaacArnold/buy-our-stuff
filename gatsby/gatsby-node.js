@@ -51,7 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   data.categories.nodes.forEach((category) => {
     createPage({
-      path: `category/${category.name}`,
+      path: `stuff/${category.name}`,
       component: categoryTemplate,
       context: {
         category: category.name,
