@@ -56,8 +56,6 @@ export const query = graphql`
     $categoryRegex: String
   ) {
     products: allSanityProduct(
-      limit: $pageSize
-      skip: $skip
       filter: { categories: { elemMatch: { name: { regex: $categoryRegex } } } }
     ) {
       totalCount
@@ -84,3 +82,5 @@ export const query = graphql`
 `;
 
 // layout: CONSTRAINED;
+// limit: $pageSize
+// skip: $skip
