@@ -25,6 +25,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  // CREATE A PAGE FOR EACH PRODUCT
   data.products.nodes.forEach((product) => {
     createPage({
       path: `product/${product.slug.current}`,
@@ -35,6 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
+  // PAGINATION
   const pageSize = 9;
   const pageCount = Math.ceil(data.products.totalCount / pageSize);
   Array.from({ length: pageCount }).forEach((_, i) => {
@@ -49,6 +51,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
+  // CREATE A PAGE FOR EACH CATEGORY
   data.categories.nodes.forEach((category) => {
     createPage({
       path: `stuff/${category.name}`,
