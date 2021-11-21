@@ -21,11 +21,7 @@ const StuffPage = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO
-        title={
-          pageContext.category
-            ? `Goods for your ${pageContext.category}`
-            : "All Goods"
-        }
+        title={pageContext.category ? `${pageContext.category}` : "All Goods"}
         image={seoImage}
       />
       <StuffHeading>
