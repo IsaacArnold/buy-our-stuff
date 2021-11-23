@@ -1,4 +1,58 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
 version: v1.22.1
-ignore: {}
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  SNYK-JS-ANSIHTML-1296849:
+    - gatsby > @gatsbyjs/webpack-hot-middleware > ansi-html:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
+    - gatsby > @pmmmwh/react-refresh-webpack-plugin > ansi-html:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
+  SNYK-JS-BROWSERSLIST-1090194:
+    - gatsby > react-dev-utils > browserslist:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
+  SNYK-JS-CSSWHAT-1298035:
+    - gatsby-plugin-sharp > svgo > css-select > css-what:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
+  SNYK-JS-IMMER-1540542:
+    - gatsby > react-dev-utils > immer:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
+  SNYK-JS-NTHCHECK-1586032:
+    - gatsby-plugin-sharp > svgo > css-select > nth-check:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
+  SNYK-JS-OBJECTPATH-1569453:
+    - gatsby > graphql-compose > object-path:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
+    - gatsby > gatsby-cli > gatsby-recipes > graphql-compose > object-path:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
+  SNYK-JS-OBJECTPATH-1585658:
+    - gatsby > graphql-compose > object-path:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
+    - gatsby > gatsby-cli > gatsby-recipes > graphql-compose > object-path:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
+  SNYK-JS-PROMPTS-1729737:
+    - gatsby > react-dev-utils > prompts:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
+  SNYK-JS-SHELLQUOTE-1766506:
+    - gatsby > react-dev-utils > shell-quote:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
+  SNYK-JS-TRIM-1017038:
+    - gatsby > gatsby-cli > gatsby-recipes > remark-parse > trim:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
+  SNYK-JS-WS-1296835:
+    - gatsby > eslint-plugin-graphql > graphql-config > @graphql-tools/url-loader > ws:
+        reason: None given
+        expires: '2021-12-23T08:21:06.971Z'
 patch: {}
