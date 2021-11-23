@@ -1112,7 +1112,7 @@
   "resolved" "https://registry.npmjs.org/@sanity/asset-utils/-/asset-utils-1.2.3.tgz"
   "version" "1.2.3"
 
-"@sanity/base@^2.0", "@sanity/base@^2.0.0", "@sanity/base@^2.19.4", "@sanity/base@^2.20.0", "@sanity/base@2.22.0":
+"@sanity/base@^2.0", "@sanity/base@^2.0.0", "@sanity/base@^2.19.4", "@sanity/base@^2.22.0", "@sanity/base@2.22.0":
   "integrity" "sha512-k0RxGvuH3n0LXDPZjvk3c33jbZiPbh2L9G9Uy2k4U/MqbU8NQFlSrpbu6rbjDf++XmsrSrxAK0RqqC9szxbVsw=="
   "resolved" "https://registry.npmjs.org/@sanity/base/-/base-2.22.0.tgz"
   "version" "2.22.0"
