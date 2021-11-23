@@ -1,0 +1,428 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.22.1
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  SNYK-JS-AJV-584908:
+    - '@sanity/core > @sanity/server > extract-text-webpack-plugin > schema-utils > ajv':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+  SNYK-JS-ANSIHTML-1296849:
+    - '@sanity/core > @sanity/server > webpack-hot-middleware > ansi-html':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+  SNYK-JS-ANSIREGEX-1583908:
+    - '@sanity/core > @sanity/server > webpack > yargs > string-width > strip-ansi > ansi-regex':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+  SNYK-JS-COLORSTRING-1082939:
+    - '@sanity/core > @sanity/webpack-integration > css-color-function > color > color-string':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-color-function > css-color-function > color > color-string':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > css-color-function > color > color-string':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > css-color-function > color > color-string':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-color-function > css-color-function > color > color-string':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-color-function > css-color-function > color > color-string':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-color-function > css-color-function > color > color-string':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-color-function > css-color-function > color > color-string':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-color-function > css-color-function > color > color-string':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+  SNYK-JS-CSSWHAT-1298035:
+    - '@sanity/core > @sanity/server > @sanity/css-loader > cssnano > cssnano-preset-default > postcss-svgo > svgo > css-select > css-what':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+  SNYK-JS-GLOBPARENT-1016905:
+    - '@sanity/core > @sanity/server > webpack > watchpack > watchpack-chokidar2 > chokidar > glob-parent':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+  SNYK-JS-IMMER-1019369:
+    - '@sanity/desk-tool > @sanity/form-builder > @sanity/portable-text-editor > slate > immer':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+  SNYK-JS-IMMER-1540542:
+    - '@sanity/desk-tool > @sanity/form-builder > @sanity/portable-text-editor > slate > immer':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+  SNYK-JS-JSONSCHEMA-1920922:
+    - '@sanity/core > jsdom > request > http-signature > jsprim > json-schema':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+  SNYK-JS-LODASHTEMPLATE-1088054:
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-initial > lodash.template':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-initial > lodash.template':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-initial > lodash.template':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+  SNYK-JS-NTHCHECK-1586032:
+    - '@sanity/core > @sanity/server > @sanity/css-loader > cssnano > cssnano-preset-default > postcss-svgo > svgo > css-select > nth-check':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+  SNYK-JS-POSTCSS-1255640:
+    - '@sanity/core > @sanity/webpack-integration > postcss-color-function > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-custom-properties > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-import > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-url > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/plugin-loader > css-modules-require-hook > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.655Z'
+    - '@sanity/core > @sanity/server > postcss-loader > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-color-function > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-color-function > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-color-function > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > autoprefixer > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > pixrem > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > pleeease-filters > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-apply > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-attribute-case-insensitive > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-color-gray > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-color-hex-alpha > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-color-hsl > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-color-hwb > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-color-rebeccapurple > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-color-rgb > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-color-rgba-fallback > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-custom-media > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-custom-properties > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-custom-properties > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-custom-properties > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-selector-matches > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-custom-selectors > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-font-family-system-ui > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.656Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-font-variant > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-image-set-polyfill > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-initial > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-media-minmax > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-nesting > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-pseudo-class-any-link > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-pseudoelements > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-replace-overflow-wrap > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-selector-not > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-import > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-import > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-url > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-url > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/plugin-loader > css-modules-require-hook > postcss-modules-extract-imports > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/server > @sanity/css-loader > postcss-modules-extract-imports > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/plugin-loader > css-modules-require-hook > postcss-modules-local-by-default > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/server > @sanity/css-loader > postcss-modules-local-by-default > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/plugin-loader > css-modules-require-hook > postcss-modules-scope > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/server > @sanity/css-loader > postcss-modules-scope > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/plugin-loader > css-modules-require-hook > postcss-modules-values > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/server > @sanity/css-loader > postcss-modules-values > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/server > @sanity/css-loader > icss-utils > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-color-function > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-color-function > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > autoprefixer > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > autoprefixer > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > pixrem > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.657Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > pixrem > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > pleeease-filters > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > pleeease-filters > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-apply > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-apply > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-attribute-case-insensitive > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-attribute-case-insensitive > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-color-gray > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-color-gray > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-color-hex-alpha > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-color-hex-alpha > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-color-hsl > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-color-hsl > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-color-hwb > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-color-hwb > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-color-rebeccapurple > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-color-rebeccapurple > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-color-rgb > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-color-rgb > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-color-rgba-fallback > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-color-rgba-fallback > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-custom-media > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-custom-media > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-custom-properties > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-custom-properties > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/webpack-integration > postcss-cssnext > postcss-custom-selectors > postcss-selector-matches > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-selector-matches > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-selector-matches > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-custom-selectors > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-custom-selectors > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-font-family-system-ui > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-font-family-system-ui > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-font-variant > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-font-variant > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-image-set-polyfill > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-image-set-polyfill > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.658Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-initial > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-initial > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-media-minmax > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-media-minmax > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-nesting > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-nesting > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-pseudo-class-any-link > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-pseudo-class-any-link > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-pseudoelements > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-pseudoelements > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-replace-overflow-wrap > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-replace-overflow-wrap > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-selector-not > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-selector-not > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/plugin-loader > @sanity/webpack-integration > postcss-cssnext > postcss-custom-selectors > postcss-selector-matches > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/server > @sanity/webpack-integration > postcss-cssnext > postcss-custom-selectors > postcss-selector-matches > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/server > @sanity/css-loader > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+    - '@sanity/core > @sanity/plugin-loader > css-modules-require-hook > postcss-modules-parser > postcss':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+  SNYK-JS-UGLIFYJS-1727251:
+    - '@sanity/core > @sanity/server > webpack > uglifyjs-webpack-plugin > uglify-js':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+  SNYK-JS-YARGSPARSER-560381:
+    - '@sanity/core > @sanity/server > webpack > yargs > yargs-parser':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+  'npm:mem:20180117':
+    - '@sanity/core > @sanity/server > webpack > yargs > os-locale > mem':
+        reason: None given
+        expires: '2021-12-23T06:59:39.659Z'
+patch: {}
