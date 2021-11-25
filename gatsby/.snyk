@@ -41,8 +41,8 @@ ignore:
         expires: '2021-12-23T08:21:06.971Z'
   SNYK-JS-PROMPTS-1729737:
     - gatsby > react-dev-utils > prompts:
-        reason: None given
-        expires: '2021-12-23T08:21:06.971Z'
+        reason: ''
+        expires: '2021-12-24T07:09:59.659Z'
   SNYK-JS-SHELLQUOTE-1766506:
     - gatsby > react-dev-utils > shell-quote:
         reason: None given
