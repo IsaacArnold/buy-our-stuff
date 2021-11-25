@@ -8,6 +8,9 @@ const CategoryStyles = styled.div`
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 2rem;
+  .NEW {
+    order: -1;
+  }
   a {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -61,7 +64,7 @@ function countProductsInCategories(products) {
 const CategoriesFilter = ({ activeCategory }) => {
   const { products } = useStaticQuery(graphql`
     query {
-      toppings: allSanityCategory {
+      categories: allSanityCategory {
         nodes {
           name
           id
@@ -87,7 +90,11 @@ const CategoriesFilter = ({ activeCategory }) => {
         <span className="count">{products.nodes.length}</span>
       </Link>
       {categoriesWithCounts.map((category) => (
-        <Link to={`/stuff/${category.name}`} key={category.id}>
+        <Link
+          to={`/stuff/${category.name}`}
+          key={category.id}
+          className={category.name === "NEW" ? "NEW" : ""}
+        >
           <span>{category.name}</span>
           <span className="count">{category.count}</span>
         </Link>
