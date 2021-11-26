@@ -111,7 +111,7 @@ export const query = graphql`
       product_description
       imageGallery {
         asset {
-          gatsbyImageData(placeholder: BLURRED)
+          gatsbyImageData
           id
         }
       }

@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
 @font-face {
     font-family: Noto Sans Display;
     src: url(${font});
+    font-display: swap;
 }
 
 :root {

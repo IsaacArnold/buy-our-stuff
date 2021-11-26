@@ -61,7 +61,7 @@ export const query = graphql`
         }
         mainImage {
           asset {
-            gatsbyImageData(placeholder: BLURRED, fit: SCALE)
+            gatsbyImageData(fit: SCALE, width: 278, height: 370)
           }
         }
         categories {

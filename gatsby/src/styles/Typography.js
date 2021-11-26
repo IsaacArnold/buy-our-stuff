@@ -5,6 +5,7 @@ const Typography = createGlobalStyle`
 @font-face {
     font-family: Lexend Deca;
     src: url(${font});
+    font-display: swap;
 }
 html {
     font-family: "Lexend Deca", sans-serif;
