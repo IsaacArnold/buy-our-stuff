@@ -24,7 +24,7 @@
     "gatsby-plugin-scroll-reveal": "^0.0.7",
     "gatsby-plugin-sharp": "^3.14.0",
     "gatsby-plugin-styled-components": "^4.14.0",
-    "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-source-filesystem": "^4.21.0",
     "gatsby-source-sanity": "^7.3.2",
     "gatsby-transformer-sharp": "^3.14.0",
     "immer": "^9.0.12",
